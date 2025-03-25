@@ -1,25 +1,29 @@
 import React from "react";
-import { FaArrowDown, FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import Swiper from "../components/Swiper";
 
 const Hero = () => {
+  const images = [
+    {
+      url: "/bg1.png",
+      text: "Legacy of 54 Years of Past, Abundance of the Future",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      text: "Innovation in Agriculture for a Sustainable Future",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      text: "Empowering Farmers with Advanced Technology",
+    },
+    {
+      url: "https://plus.unsplash.com/premium_photo-1669122601993-449a0a3b70c1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      text: "Growing Together for a Greener Tomorrow",
+    },
+  ];
+
   return (
-    <section className="w-full h-screen relative">
-      <div className="w-full h-full">
-        <img className="w-full h-full object-cover" src="/bg1.png" alt="" />
-      </div>
-      <div className="absolute bottom-5 left-0 w-full flex items-center justify-between px-12">
-        <div className="arrows-left flex gap-4 text-white">
-          <button className="border-[1px] border-white p-4 rounded-full cursor-pointer">
-            <FaArrowLeft size={26} />
-          </button>
-          <button className="border-[1px] border-white p-4 rounded-full cursor-pointer">
-            <FaArrowRight size={26} />
-          </button>
-        </div>
-    <div className="arrow-right border-[1px] border-white text-white p-6 rounded-full cursor-pointer">
-    <FaArrowDown size={30} color="#42FF00" />
-    </div>
-      </div>
+    <section>
+      <Swiper images={images} />
     </section>
   );
 };
