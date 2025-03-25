@@ -14,16 +14,16 @@ const Navbar = () => {
     tl.current.to(navRef.current, {
       backgroundColor: "#002B04",
       padding: "20px 48px",
-      ease: "none"
+      ease: "none",
     });
     tl.current.to(navRef.current, {
       y: -100,
-      ease: "none"
+      ease: "none",
     });
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY.current) {
         tl.current.play();
       } else {
@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="w-full px-12 max-[599px]:px-4 py-8 flex items-center justify-between fixed top-0 left-0 z-10 bg-transparent "
+      className="w-full px-12 max-[599px]:px-4 py-8 flex items-center justify-between fixed top-0 left-0 z-10 "
     >
       <div className="logo">
         <h1 className="text-white text-[2vw] font-semibold cursor-pointer">

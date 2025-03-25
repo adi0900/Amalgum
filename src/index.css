@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "neue";
-    src: url(./assets/fonts/PPNeueMontreal-Regular.ttf);
+  font-family: "neue";
+  src: url(./assets/fonts/PPNeueMontreal-Regular.ttf);
 }
 
-*{
-    font-family: neue;
+* {
+  font-family: neue;
 }
 
 ::-webkit-scrollbar {
- display: none;
+  display: none;
 }
-

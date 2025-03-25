@@ -10,19 +10,19 @@ import { ScrollTrigger } from "gsap/all";
 const ImageSlider = ({ images }) => {
   gsap.registerPlugin(ScrollTrigger);
   const swiperRef = useRef(null);
-  const imageRefs = useRef([]); // Store multiple image refs
+  const imageRefs = useRef([]);
 
   useEffect(() => {
     gsap.utils.toArray(".slide-image").forEach((image) => {
       gsap.to(image, {
-        yPercent: 30, 
-        willChange : "transform",
+        yPercent: 30,
+        willChange: "transform",
         ease: "none",
         scrollTrigger: {
           trigger: ".containers",
           start: "50% 50%",
           end: "bottom top",
-          scrub: .3,
+          scrub: 0.3,
         },
       });
     });
@@ -43,16 +43,11 @@ const ImageSlider = ({ images }) => {
         {images.map((image, index) => (
           <SwiperSlide key={index} className="h-full w-full relative">
             <img
-              ref={(el) => (imageRefs.current[index] = el)} 
+              ref={(el) => (imageRefs.current[index] = el)}
               className="w-full h-full object-cover slide-image"
               src={image.url}
               alt=""
             />
-            <div className="absolute left-0 top-0 z-10 text-[6vw] max-[599px]:text-[12vw] p-12 max-[599px]:p-4 flex items-end w-full h-full">
-              <h1 className="-translate-y-24 text-white font-semibold leading-[1]">
-                {image.text}
-              </h1>
-            </div>
           </SwiperSlide>
         ))}
       </Swiper>
