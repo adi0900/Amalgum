@@ -1,17 +1,19 @@
 import React from "react";
 import Button from "./Button";
 
-const Box = ({ product, logo }) => {
+const Box = ({ ref, refImg, product, logo }) => {
   return (
     <div
+      ref={ref}
       key={product?.id}
-      className="product bg-cover relative w-1/2 max-[599px]:w-full h-[35rem] bg-[#003D23] text-white rounded-4xl overflow-hidden"
+      className="product bg-cover relative w-1/2 max-[599px]:w-full h-[35rem] bg-[#003D23] text-white rounded-4xl cursor-pointer overflow-hidden"
     >
       {/* Product Image */}
       <div className="w-full h-full">
         {logo && (
           <img
-            className="w-full h-full object-cover hover:scale-110 transition-all duration-500"
+            ref={refImg}
+            className="w-full h-full object-cover"
             src={product?.imgSrc}
             alt={product?.title || "Product Image"}
           />

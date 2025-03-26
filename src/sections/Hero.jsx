@@ -1,7 +1,7 @@
 import React from "react";
 import Swiper from "../components/Swiper";
 
-const Hero = () => {
+const Hero = ({ ref }) => {
   const images = [
     {
       url: "/images/bg1.png",
@@ -26,7 +26,7 @@ const Hero = () => {
   ];
 
   return (
-    <section>
+    <section ref={ref}>
       <Swiper images={images} />
     </section>
   );

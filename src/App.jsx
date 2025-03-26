@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import Overview from "./sections/Overview";
@@ -9,16 +9,18 @@ import News from "./sections/News";
 import Footer from "./sections/Footer";
 
 const App = () => {
+  const heroRef = useRef(null);
+
   return (
     <>
-      <Navbar />
-      <Hero />
+      <Navbar heroRef={heroRef} />
+      <Hero ref={heroRef} />
       <Overview />
-      <Empower/>
-      <Farmers/>
-      <News/>
-      <Analysis/>
-      <Footer/>
+      <Empower />
+      <Farmers />
+      <News />
+      <Analysis />
+      <Footer />
     </>
   );
 };

@@ -7,60 +7,64 @@ import "swiper/css/navigation";
 import Button from "../components/Button";
 
 const Farmers = () => {
-    const slidesData = [
-        {
-          url: "/images/7.png",
-          title: "Empowering Farmers with AI",
-          heading: "Smart Crop Advisory, Market Insights & Precision Farming",
-          description:
-            "Agriculture in India faces challenges due to a lack of affordable, real-time advisory tools. By integrating AI, geospatial analytics, and multilingual support, farmers can optimize yields, tackle climate uncertainties, and access fair market prices—driving sustainable growth.",
-          buttonText: "READ MORE",
-        },
-        {
-          url: "/images/8.png",
-          title: "AI-Driven Farming Revolution",
-          heading: "Real-Time Insights for Smarter Agriculture",
-          description:
-            "Indian farmers struggle with unpredictable weather and market fluctuations. With AI-powered geospatial analytics and voice-based advisory, they can make informed decisions, improve yields, and maximize profits—ensuring a resilient future.",
-          buttonText: "READ MORE",
-        },
-        {
-          url: "/images/3.png",
-          title: "Sustainable Agriculture with AI",
-          heading: "Climate-Resilient Farming Solutions",
-          description:
-            "Climate change threatens traditional farming. AI-powered weather predictions and adaptive farming strategies help mitigate risks, optimize water usage, and enhance productivity—ensuring long-term sustainability.",
-          buttonText: "READ MORE",
-        },
-        {
-          url: "/images/2.png",
-          title: "Market Intelligence for Farmers",
-          heading: "Real-Time Price Forecasts & Demand Trends",
-          description:
-            "Farmers lack access to real-time market trends, leading to unfair pricing. AI-driven market analysis helps predict demand, optimize crop selection, and ensure better earnings—empowering farmers with data-backed decisions.",
-          buttonText: "DISCOVER",
-        },
-        {
-          url: "/images/5.png",
-          title: "AI-Powered Pest & Disease Control",
-          heading: "Early Detection & Prevention for Healthier Crops",
-          description:
-            "Pests and diseases cause major yield losses. With AI-enabled image recognition and satellite-based monitoring, farmers can detect threats early, take preventive actions, and reduce chemical overuse—ensuring safer, healthier crops.",
-          buttonText: "DISCOVER",
-        },
-      ];
-      
+  const slidesData = [
+    {
+      url: "/images/7.png",
+      mobileUrl: "/images/bg1.png",
+      title: "Empowering Farmers with AI",
+      heading: "Smart Crop Advisory, Market Insights & Precision Farming",
+      description:
+        "Agriculture in India faces challenges due to a lack of affordable, real-time advisory tools. By integrating AI, geospatial analytics, and multilingual support, farmers can optimize yields, tackle climate uncertainties, and access fair market prices—driving sustainable growth.",
+      buttonText: "READ MORE",
+    },
+    {
+      url: "/images/8.png",
+      mobileUrl: "/images/bg2.png",
+      title: "AI-Driven Farming Revolution",
+      heading: "Real-Time Insights for Smarter Agriculture",
+      description:
+        "Indian farmers struggle with unpredictable weather and market fluctuations. With AI-powered geospatial analytics and voice-based advisory, they can make informed decisions, improve yields, and maximize profits—ensuring a resilient future.",
+      buttonText: "READ MORE",
+    },
+    {
+      url: "/images/3.png",
+      mobileUrl: "/images/bg3.png",
+      title: "Sustainable Agriculture with AI",
+      heading: "Climate-Resilient Farming Solutions",
+      description:
+        "Climate change threatens traditional farming. AI-powered weather predictions and adaptive farming strategies help mitigate risks, optimize water usage, and enhance productivity—ensuring long-term sustainability.",
+      buttonText: "READ MORE",
+    },
+    {
+      url: "/images/2.png",
+      mobileUrl: "/images/bg4.png",
+      title: "Market Intelligence for Farmers",
+      heading: "Real-Time Price Forecasts & Demand Trends",
+      description:
+        "Farmers lack access to real-time market trends, leading to unfair pricing. AI-driven market analysis helps predict demand, optimize crop selection, and ensure better earnings—empowering farmers with data-backed decisions.",
+      buttonText: "DISCOVER",
+    },
+    {
+      url: "/images/5.png",
+      mobileUrl: "/images/bg5.png",
+      title: "AI-Powered Pest & Disease Control",
+      heading: "Early Detection & Prevention for Healthier Crops",
+      description:
+        "Pests and diseases cause major yield losses. With AI-enabled image recognition and satellite-based monitoring, farmers can detect threats early, take preventive actions, and reduce chemical overuse—ensuring safer, healthier crops.",
+      buttonText: "DISCOVER",
+    },
+  ];
 
   const swiperRef = useRef(null);
 
   return (
     <section
       className="relative w-full min-h-screen overflow-hidden"
-      style={{ height: "100vh" }} // Ensures full viewport height
+      style={{ height: "100vh" }}
     >
       <Swiper
         className="w-full h-full"
-        style={{ height: "100vh" }} // Ensures Swiper takes full height
+        style={{ height: "100vh" }}
         modules={[Navigation]}
         loop={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -71,22 +75,30 @@ const Farmers = () => {
       >
         {slidesData.map((dets, index) => (
           <SwiperSlide key={index} className="h-full w-full">
-            <div className="contain w-full h-full flex items-center justify-center gap-10 px-12">
-              <div className="left w-[33%] h-[75%] flex items-center justify-center overflow-hidden">
+            <div className="contain w-full h-full flex max-[599px]:flex-col items-center justify-center gap-10 px-12 max-[599px]:px-6">
+              <div className="left w-[33%] max-[599px]:w-full h-[75%]max-[599px]:h-1/2 max-[599px]:rounded-xl flex items-center justify-center overflow-hidden">
                 <img
-                  className="w-full h-full object-cover rounded-t-[444px]"
+                  className="w-full h-full object-cover rounded-t-[444px] max-[599px]:hidden"
                   src={dets.url}
+                  alt=""
+                  style={{ height: "100%", objectFit: "cover" }}
+                />
+                <img
+                  className="w-full h-full object-cover rounded-t-[444px] max-[599px]:rounded-none max-[599px]:block hidden"
+                  src={dets.mobileUrl}
                   alt=""
                   style={{ height: "100%", objectFit: "cover" }}
                 />
               </div>
 
-              <div className="right w-[60%] h-auto flex flex-col justify-between gap-6 text-black">
-                <h4 className="text-[3vw]">{dets.title}</h4>
-                <h2 className="text-[4.5vw] font-semibold leading-tight">
+              <div className="right w-[60%] max-[599px]:w-full h-auto flex flex-col justify-between gap-6 text-black">
+                <h4 className="text-[3vw] max-[599px]:text-[5vw] leading-tight">
+                  {dets.title}
+                </h4>
+                <h2 className="text-[4.5vw] max-[599px]:text-[6vw] font-semibold leading-tight">
                   {dets.heading}
                 </h2>
-                <p className="text-[1.5w]">
+                <p className="text-[1.5w] max-[599px]:text-[3.5vw]">
                   {dets.description}
                 </p>
                 <Button text={dets.buttonText} />

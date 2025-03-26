@@ -1,11 +1,14 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
-import { FaArrowRight } from "react-icons/fa6";
 import SplitType from "split-type";
 import Box from "../components/Box";
 
 const Overview = () => {
+  const box = useRef([]);
+  const img = useRef([]);
+  const btn = useRef([]);
+
   const products = [
     {
       id: 1,
@@ -15,7 +18,7 @@ const Overview = () => {
       imgSrc: "/images/product-1.png",
       logoSrc: "/images/farm.svg",
       altText: "Farm Logo",
-      buttonText : "REVIEW"
+      buttonText: "REVIEW",
     },
     {
       id: 2,
@@ -25,7 +28,7 @@ const Overview = () => {
       imgSrc: "/images/product-2.png",
       logoSrc: "/images/industry.svg",
       altText: "Industry Logo",
-      buttonText : "REVIEW"
+      buttonText: "REVIEW",
     },
   ];
 
@@ -57,8 +60,40 @@ const Overview = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (box.current.length > 0) {
+      box.current.forEach((el, index) => {
+        if (!el) return;
+
+        el.addEventListener("mouseenter", () => {
+          gsap.to(img.current[index], { scale: 1.2 });
+          gsap.to(btn.current[index], {
+            backgroundColor: "#003D23",
+            color: "#fff",
+          });
+        });
+
+        el.addEventListener("mouseleave", () => {
+          gsap.to(img.current[index], { scale: 1 });
+          gsap.to(btn.current[index], {
+            backgroundColor: "#fff",
+            color: "#003D23",
+          });
+        });
+      });
+
+      return () => {
+        box.current.forEach((el, index) => {
+          if (!el) return;
+          el.removeEventListener("mouseenter", () => {});
+          el.removeEventListener("mouseleave", () => {});
+        });
+      };
+    }
+  }, []);
+
   return (
-    <section className="overview-section w-full min-h-screen bg-white px-12 max-[599px]:px-4 py-6 font-medium">
+    <section className="overview-section w-full min-h-screen bg-white px-12 max-[599px]:px-4 py-6 font-medium overflow-hidden">
       <div className="main-text w-full py-10">
         <h2
           ref={textRef}
@@ -68,9 +103,16 @@ const Overview = () => {
         </h2>
       </div>
       <div className="products h-full w-full flex gap-5 max-[599px]:flex-col mt-10 max-[599px]:mt-6">
-        {/* Product 1 */}
-        {products.map((product,index) => (
-          <Box product={product} key={index} logo={true}/>
+        {products.map((product, index) => (
+          <Box
+            ref={(el) => (box.current[index] = el)}
+            refImg={(el) => (img.current[index] = el)}
+            refBtn={(el) => (btn.current[index] = el)}
+            product={product}
+            key={index}
+            index={index}
+            logo={true}
+          />
         ))}
       </div>
     </section>
