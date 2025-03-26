@@ -4,20 +4,24 @@ import Swiper from "../components/Swiper";
 const Hero = () => {
   const images = [
     {
-      url: "/bg1.png",
-      text: "Legacy of 54 Years of Past, Abundance of the Future",
+      url: "/images/bg1.png",
+      text: "Legacy of Innovation, Future of Prosperity",
     },
     {
-      url: "https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Innovation in Agriculture for a Sustainable Future",
+      url: "/images/bg2.png",
+      text: "Smart insights for a sustainable future",
     },
     {
-      url: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Empowering Farmers with Advanced Technology",
+      url: "/images/bg3.png",
+      text: "AI-driven solutions for better yields & profits.",
     },
     {
-      url: "https://plus.unsplash.com/premium_photo-1669122601993-449a0a3b70c1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Growing Together for a Greener Tomorrow",
+      url: "/images/bg4.png",
+      text: "Real-time data, local insights, better harvests.",
+    },
+    {
+      url: "/images/bg5.png",
+      text: "Bridging tradition with technology for growth.",
     },
   ];
 

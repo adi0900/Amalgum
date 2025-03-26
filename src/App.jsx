@@ -5,6 +5,8 @@ import Overview from "./sections/Overview";
 import Empower from "./sections/Empower";
 import Farmers from "./sections/Farmers";
 import Analysis from "./sections/Analysis";
+import News from "./sections/News";
+import Footer from "./sections/Footer";
 
 const App = () => {
   return (
@@ -14,7 +16,9 @@ const App = () => {
       <Overview />
       <Empower/>
       <Farmers/>
+      <News/>
       <Analysis/>
+      <Footer/>
     </>
   );
 };

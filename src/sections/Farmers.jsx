@@ -9,7 +9,7 @@ import Button from "../components/Button";
 const Farmers = () => {
     const slidesData = [
         {
-          url: "/images/seeds.png",
+          url: "/images/7.png",
           title: "Empowering Farmers with AI",
           heading: "Smart Crop Advisory, Market Insights & Precision Farming",
           description:
@@ -17,27 +17,35 @@ const Farmers = () => {
           buttonText: "READ MORE",
         },
         {
-          url: "https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          title: "Innovation in Agriculture",
-          heading: "Transforming Farming with AI-Powered Solutions",
+          url: "/images/8.png",
+          title: "AI-Driven Farming Revolution",
+          heading: "Real-Time Insights for Smarter Agriculture",
           description:
-            "Advanced AI-driven analytics help farmers make data-driven decisions, ensuring better productivity and sustainable agricultural practices.",
-          buttonText: "LEARN MORE",
+            "Indian farmers struggle with unpredictable weather and market fluctuations. With AI-powered geospatial analytics and voice-based advisory, they can make informed decisions, improve yields, and maximize profits—ensuring a resilient future.",
+          buttonText: "READ MORE",
         },
         {
-          url: "/bg1.png",
-          title: "Empowering Farmers with Technology",
-          heading: "Precision Farming with Real-Time Insights",
+          url: "/images/3.png",
+          title: "Sustainable Agriculture with AI",
+          heading: "Climate-Resilient Farming Solutions",
           description:
-            "Technology-driven solutions enable farmers to monitor soil health, predict weather patterns, and optimize resource utilization effectively.",
-          buttonText: "EXPLORE MORE",
+            "Climate change threatens traditional farming. AI-powered weather predictions and adaptive farming strategies help mitigate risks, optimize water usage, and enhance productivity—ensuring long-term sustainability.",
+          buttonText: "READ MORE",
         },
         {
-          url: "https://plus.unsplash.com/premium_photo-1669122601993-449a0a3b70c1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          title: "Sustainable Farming for the Future",
-          heading: "Growing Together for a Greener Tomorrow",
+          url: "/images/2.png",
+          title: "Market Intelligence for Farmers",
+          heading: "Real-Time Price Forecasts & Demand Trends",
           description:
-            "Eco-friendly farming techniques and innovative solutions are driving the future of sustainable agriculture worldwide.",
+            "Farmers lack access to real-time market trends, leading to unfair pricing. AI-driven market analysis helps predict demand, optimize crop selection, and ensure better earnings—empowering farmers with data-backed decisions.",
+          buttonText: "DISCOVER",
+        },
+        {
+          url: "/images/5.png",
+          title: "AI-Powered Pest & Disease Control",
+          heading: "Early Detection & Prevention for Healthier Crops",
+          description:
+            "Pests and diseases cause major yield losses. With AI-enabled image recognition and satellite-based monitoring, farmers can detect threats early, take preventive actions, and reduce chemical overuse—ensuring safer, healthier crops.",
           buttonText: "DISCOVER",
         },
       ];
@@ -64,7 +72,7 @@ const Farmers = () => {
         {slidesData.map((dets, index) => (
           <SwiperSlide key={index} className="h-full w-full">
             <div className="contain w-full h-full flex items-center justify-center gap-10 px-12">
-              <div className="left w-[33%] h-[70%] flex items-center justify-center overflow-hidden">
+              <div className="left w-[33%] h-[75%] flex items-center justify-center overflow-hidden">
                 <img
                   className="w-full h-full object-cover rounded-t-[444px]"
                   src={dets.url}

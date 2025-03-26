@@ -48,6 +48,9 @@ const ImageSlider = ({ images }) => {
               src={image.url}
               alt=""
             />
+            <div className="absolute bottom-36 left-15 font-semibold text-[5vw] w-[60%] text-white leading-tight">
+              <h1>{image.text}</h1>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
