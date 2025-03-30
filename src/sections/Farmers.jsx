@@ -9,8 +9,7 @@ import Button from "../components/Button";
 const Farmers = () => {
   const slidesData = [
     {
-      url: "/images/7.png",
-      mobileUrl: "/images/bg1.png",
+      url: "/images/slide1.webp",
       title: "Empowering Farmers with AI",
       heading: "Smart Crop Advisory, Market Insights & Precision Farming",
       description:
@@ -18,8 +17,7 @@ const Farmers = () => {
       buttonText: "READ MORE",
     },
     {
-      url: "/images/8.png",
-      mobileUrl: "/images/bg2.png",
+      url: "/images/slide2.webp",
       title: "AI-Driven Farming Revolution",
       heading: "Real-Time Insights for Smarter Agriculture",
       description:
@@ -27,8 +25,7 @@ const Farmers = () => {
       buttonText: "READ MORE",
     },
     {
-      url: "/images/3.png",
-      mobileUrl: "/images/bg3.png",
+      url: "/images/slide3.webp",
       title: "Sustainable Agriculture with AI",
       heading: "Climate-Resilient Farming Solutions",
       description:
@@ -36,8 +33,7 @@ const Farmers = () => {
       buttonText: "READ MORE",
     },
     {
-      url: "/images/2.png",
-      mobileUrl: "/images/bg4.png",
+      url: "/images/slide4.webp",
       title: "Market Intelligence for Farmers",
       heading: "Real-Time Price Forecasts & Demand Trends",
       description:
@@ -45,8 +41,7 @@ const Farmers = () => {
       buttonText: "DISCOVER",
     },
     {
-      url: "/images/5.png",
-      mobileUrl: "/images/bg5.png",
+      url: "/images/slide5.webp",
       title: "AI-Powered Pest & Disease Control",
       heading: "Early Detection & Prevention for Healthier Crops",
       description:
@@ -75,17 +70,11 @@ const Farmers = () => {
       >
         {slidesData.map((dets, index) => (
           <SwiperSlide key={index} className="h-full w-full">
-            <div className="contain w-full h-full flex max-[599px]:flex-col items-center justify-center gap-10 px-12 max-[599px]:px-6">
-              <div className="left w-[33%] max-[599px]:w-full h-[75%]max-[599px]:h-1/2 max-[599px]:rounded-xl flex items-center justify-center overflow-hidden">
+            <div className="contain w-full h-full max-[599px]:h-[90%] flex max-[599px]:flex-col items-center justify-center gap-10 px-12 max-[599px]:px-6">
+              <div className="left w-[33%] max-[599px]:w-full h-[75%] max-[599px]:h-1/2 rounded-t-[444px] max-[599px]:rounded-xl flex items-center justify-center overflow-hidden">
                 <img
-                  className="w-full h-full object-cover rounded-t-[444px] max-[599px]:hidden"
+                  className="w-full h-full object-cover"
                   src={dets.url}
-                  alt=""
-                  style={{ height: "100%", objectFit: "cover" }}
-                />
-                <img
-                  className="w-full h-full object-cover rounded-t-[444px] max-[599px]:rounded-none max-[599px]:block hidden"
-                  src={dets.mobileUrl}
                   alt=""
                   style={{ height: "100%", objectFit: "cover" }}
                 />

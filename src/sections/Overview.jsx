@@ -15,7 +15,7 @@ const Overview = () => {
       title: "Agricultural Products",
       description:
         "We aim to increase the productivity and quality of Indian agriculture with our rich AI use cases. We provide reliable and innovative products for bountiful harvests by offering solutions suitable for all types of plants and soil, from classic to special.",
-      imgSrc: "/images/product-1.png",
+      imgSrc: "/images/box1.webp",
       logoSrc: "/images/farm.svg",
       altText: "Farm Logo",
       buttonText: "REVIEW",
@@ -25,7 +25,7 @@ const Overview = () => {
       title: "Industry Ready",
       description:
         "With our extensive range of industrial products, we continue to support Turkish industry.",
-      imgSrc: "/images/product-2.png",
+      imgSrc: "/images/box2.webp",
       logoSrc: "/images/industry.svg",
       altText: "Industry Logo",
       buttonText: "REVIEW",
@@ -93,7 +93,7 @@ const Overview = () => {
   }, []);
 
   return (
-    <section className="overview-section w-full min-h-screen bg-white px-12 max-[599px]:px-4 py-6 font-medium overflow-hidden">
+    <section className="overview-section w-full bg-white px-12 max-[599px]:px-4 py-6 font-medium overflow-hidden">
       <div className="main-text w-full py-10">
         <h2
           ref={textRef}
@@ -102,7 +102,7 @@ const Overview = () => {
           We preserve the power of nature, adding abundance to the future.
         </h2>
       </div>
-      <div className="products h-full w-full flex gap-5 max-[599px]:flex-col mt-10 max-[599px]:mt-6">
+      <div className="products flex gap-5 max-[599px]:flex-col mt-10 max-[599px]:mt-6">
         {products.map((product, index) => (
           <Box
             ref={(el) => (box.current[index] = el)}

@@ -48,13 +48,16 @@ const Empower = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="containers w-full h-screen relative">
+    <section ref={containerRef} className="containers w-full min-h-screen max-[599px]:h-[110vh] flex items-center justify-center overflow-hidden relative">
+      <div className="w-full h-full overflow-hidden absolute top-0 left-0">
       <img
         ref={imageRef}
         className="w-full h-full object-cover"
         src="/images/Backlines.svg"
         alt=""
+        
       />
+      </div>
       <div className="w-full h-full">
         <div className="absolute top-0 left-0 px-12 max-[599px]:px-4 py-6 max-[599px]:py-4">
           <div className="heading pb-10">

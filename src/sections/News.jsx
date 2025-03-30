@@ -1,18 +1,20 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import SplitType from "split-type";
 
 const News = () => {
   const newsData = [
     {
       date: "February 22, 2024",
-      image: "/images/1.png",
+      image: "/images/news1.webp",
       description:
         "Our initiative was honored with the 'Sustainable Agriculture Impact Award' for pioneering AI-driven precision farming, empowering rural communities with accessible, data-backed insights.",
     },
     {
       date: "January 17, 2024",
-      image: "/images/4.png",
+      image: "/images/news2.webp",
       description:
         "With AI, geospatial analytics, and multilingual support, our platform has reached over 5 million farmers—helping them make informed decisions and improve yield sustainability.",
     },
@@ -44,6 +46,30 @@ const News = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const text = new SplitType(".text", { types: "words, chars" });
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      text.chars,
+      { opacity: 0, y: 10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "none",
+        willChange: "transform, opacity",
+        scrollTrigger: {
+          trigger: ".text",
+          start: "top 80%",
+          end: "100% 80%",
+          scrub: 0.3,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section className="w-full min-h-screen px-12 max-[599px]:px-4 py-10 overflow-hidden">
       <div className="containers w-full h-full flex justify-between items-center max-[599px]:flex-col gap-10">
@@ -52,7 +78,7 @@ const News = () => {
             <h5 className="text-[1.1vw] max-[599px]:text-[3.1vw]">
               Monday, March 4, 2024
             </h5>
-            <h3 className="text-[2vw] max-[599px]:text-[6vw] leading-tight">
+            <h3 className="text text-[2vw] max-[599px]:text-[6vw] leading-tight">
               AI-Powered Agri-Advisory Revolutionizes Farming
             </h3>
           </div>
@@ -70,7 +96,7 @@ const News = () => {
         </div>
         <div className="right w-[70%] max-[599px]:w-full h-full ">
           <div className="flex flex-col gap-4">
-            <h4 className="text-[3vw] max-[599px]:text-[6vw] font-semibold">
+            <h4 className="text text-[3vw] max-[599px]:text-[6vw] font-semibold">
               Recent News
             </h4>
             <button className="flex mb-6 pointer-events-auto cursor-pointer gap-4 hover:scale-x-110 duration-500 hover:bg-[#FCC066] origin-left bg-[#FFEFD8] text-black font-semibold text-[1.3vw] max-[599px]:text-[4vw] w-fit px-8 py-4 rounded-full">

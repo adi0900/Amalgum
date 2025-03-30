@@ -13,6 +13,17 @@ const ImageSlider = ({ images }) => {
   const imageRefs = useRef([]);
 
   useEffect(() => {
+
+    gsap.fromTo(".anim", {
+      yPercent: -200,
+      opacity: 0,
+    }, {
+      yPercent: 0,
+      opacity: 1,
+      duration :1,
+      willChange: "transform, opacity",
+    })
+
     gsap.utils.toArray(".slide-image").forEach((image) => {
       gsap.to(image, {
         yPercent: 30,
@@ -48,14 +59,14 @@ const ImageSlider = ({ images }) => {
               src={image.url}
               alt=""
             />
-            <div className="absolute bottom-36 max-[599px]:bottom-28 left-15 max-[599px]:left-5 font-semibold text-[5vw] max-[599px]:text-[13vw] w-[60%] max-[599px]:w-[90%] text-white leading-tight">
+            <div className="anim absolute bottom-36 max-[599px]:bottom-28 left-15 max-[599px]:left-5 font-semibold text-[5vw] max-[599px]:text-[13vw] w-[60%] max-[599px]:w-[90%] text-white leading-tight">
               <h1>{image.text}</h1>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <div className="w-full px-12 max-[599px]:px-4 absolute bottom-5 left-0 z-10 flex items-center justify-between">
+      <div className="anim w-full px-12 max-[599px]:px-4 absolute bottom-5 left-0 z-10 flex items-center justify-between">
         <div className="flex gap-4 text-white">
           <button
             className="border border-white p-4 rounded-full cursor-pointer custom-prev transition-all duration-500 hover:bg-white hover:text-[#002B04]"

@@ -1,5 +1,4 @@
 import React from "react";
-import Box from "../components/Box";
 import Button from "../components/Button";
 
 const Analysis = () => {
@@ -18,7 +17,7 @@ const Analysis = () => {
       title: "Geospatial analytics",
       description:
         "Optimize soil health using Google Earth Engine & AI-driven geospatial analytics.",
-      imgSrc: "/images/6.png",
+      imgSrc: "/images/analytic.webp",
       logoSrc: "/images/farm.svg",
       altText: "Geospatial Icon",
       buttonText: "FERTILIZATION RECOMMENDATIONS",
@@ -27,11 +26,11 @@ const Analysis = () => {
 
   return (
     <section className="w-full h-auto px-12 max-[599px]:px-4 py-20 max-[599px]:py-4 overflow-hidden">
-      <div className="h-full w-full flex gap-5 max-[599px]:flex-col cursor-pointer">
+      <div className="w-full h-full flex gap-5 max-[599px]:flex-col cursor-pointer">
         {products.map((product, index) => (
           <div
             key={index}
-            className="product bg-cover relative w-1/2 max-[599px]:w-full h-[20rem] max-[599px]:h-[25rem] bg-[#003D23] text-white rounded-4xl overflow-hidden"
+            className="product bg-cover relative w-1/2 max-[599px]:w-full min-h-[20rem] bg-[#003D23] text-white rounded-4xl overflow-hidden"
           >
             {/* Product Image */}
             <div className="w-full h-full">
@@ -45,7 +44,7 @@ const Analysis = () => {
             </div>
 
             {/* Content Overlay */}
-            <div className="absolute w-full h-full top-0 left-0 p-8 flex justify-between flex-col gap-4 pointer-events-none">
+            <div className="absolute inset-0 p-8 flex flex-col justify-between gap-4 pointer-events-none h-auto">
               {/* Logo and Heading */}
               <div className="logo-group flex items-center justify-between gap-6">
                 <div className="logo w-[12%]">
